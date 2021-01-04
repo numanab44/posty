@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostLikeController;
 use App\Http\Controllers\UserPostController;
 use App\Http\Controllers\DashboardController;
@@ -37,6 +38,9 @@ Route::post('/login', [LoginController::class, 'store']);
 
 
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
+
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+Route::post('/profile', [ProfileController::class, 'update']);
 
 
 /// POST ROUTES
